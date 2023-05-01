@@ -1,0 +1,22 @@
+{
+  "firstName": "Shashank",
+  "lastName": "Srivastava",
+  "email": "shashank@hashedin.com",
+  "images": [
+    "Photo 1",
+    "Photo 2",
+    "Photo 3",
+    "Photo 3"
+  ]
+},
+{
+  "firstName": "Shashank",
+  "lastName": "Srivastava",
+  "email": "shashank@hashedin.com",
+  "images": {
+  "photo1.jpg": "Photo 1",
+  "photo2.jpg": "Photo 2",
+  "photo3.jpg": "Photo 3",
+  "photo3.jpg": "Photo 3"
+ }
+}
