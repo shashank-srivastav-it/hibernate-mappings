@@ -1,5 +1,11 @@
-package com.backend.hibernateadvance.compositeKey.entity.idClass;
+package com.backend.hibernateadvance.compositeKey.model;
 
-public class PersonName {
-    
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+public class PersonName implements Serializable {
+    private String firstName;
+    private String lastName;
 }

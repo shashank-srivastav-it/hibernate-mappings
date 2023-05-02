@@ -1,10 +1,13 @@
-package com.backend.hibernateadvance.compositeKey.entity;
+package com.backend.hibernateadvance.compositeKey.model.entity;
 
-import com.backend.hibernateadvance.compositeKey.entity.idClass.PersonPKId;
+import com.backend.hibernateadvance.attributeConverter.PersonNameConverter;
+import com.backend.hibernateadvance.compositeKey.model.PersonName;
+import com.backend.hibernateadvance.compositeKey.model.idClass.PersonPKId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -21,7 +24,8 @@ public class Person {
     private Long personId;
     @Id
     private Long deptId;
-    private String name;
+    @Convert(converter = PersonNameConverter.class)
+    private PersonName personName;
     private String email;
     private String phone;
 }

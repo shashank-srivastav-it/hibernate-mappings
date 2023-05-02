@@ -1,4 +1,4 @@
-package com.backend.hibernateadvance.compositeKey.entity.idClass;
+package com.backend.hibernateadvance.compositeKey.model.idClass;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

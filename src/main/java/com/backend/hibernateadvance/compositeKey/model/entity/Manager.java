@@ -1,5 +1,6 @@
-package com.backend.hibernateadvance.compositeKey.entity;
+package com.backend.hibernateadvance.compositeKey.model.entity;
 
+import com.backend.hibernateadvance.compositeKey.model.idClass.ManagerPKId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
