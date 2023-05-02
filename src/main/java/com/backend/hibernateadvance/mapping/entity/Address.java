@@ -1,4 +1,4 @@
-package com.backend.hibernateadvance.entity;
+package com.backend.hibernateadvance.mapping.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

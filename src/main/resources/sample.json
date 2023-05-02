@@ -20,3 +20,15 @@
   "photo3.jpg": "Photo 3"
  }
 }
+,
+{
+"name": "S-450",
+"seats": 4,
+"firePower": 440
+},
+{
+"name": "400N",
+"seats": 2,
+"maxLoad": 34,
+"sleeperCab": true
+}

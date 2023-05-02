@@ -1,6 +1,6 @@
-package com.backend.hibernateadvance.entity;
+package com.backend.hibernateadvance.mapping.entity;
 
-import com.backend.hibernateadvance.enumeration.Status;
+import com.backend.hibernateadvance.mapping.enumeration.Status;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
