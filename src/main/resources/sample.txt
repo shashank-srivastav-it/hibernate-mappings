@@ -1,0 +1,25 @@
+
+-------------------------------------------------------
+        Composite Key Person Table
+{
+"personId": 1,
+"deptId": 2,
+"personName": {
+"firstName": "shashank",
+"lastName": "srivastava"
+},
+"email": "shashank@test.com",
+"phone": "9876543210"
+}
+--------------------------------------------------------
+        Composite Key Manager Table
+{
+"managerPKId": {
+"managerId": 1,
+"deptId": 2
+},
+"name": "bikash",
+"email": "bikash@test.com",
+"phone": "9876543210"
+}
+---------------------------------------------------------

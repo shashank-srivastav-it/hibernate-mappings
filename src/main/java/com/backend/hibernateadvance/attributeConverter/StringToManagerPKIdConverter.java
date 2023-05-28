@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StringToManagerPKIdConverter implements Converter<String, ManagerPKId> {
-    @Override //1-2 1-mid 2-deptid
+    @Override //1-2 1-managerId 2-deptId
     public ManagerPKId convert(String source) {
         String[] parts = source.split("-");
         if (parts.length != 2) {
