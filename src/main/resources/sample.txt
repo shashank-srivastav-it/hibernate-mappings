@@ -1,0 +1,134 @@
+{
+  "firstName": "shashank",
+  "lastName": "srivastava",
+  "email": "shashank@dev.com",
+  "status": "ACTIVE",
+  "homeAddress": {
+    "street": "street no-2",
+    "zipcode": "110001",
+    "city": "Delhi"
+  },
+  "billingAddress": {
+    "street": "street no-2",
+    "zipcode": "110006",
+    "city": "Delhi"
+  },
+  "about": "Showing Demo of hibernate concepts",
+  "images": [
+    "Photo 1",
+    "Photo 2",
+    "Photo 3",
+    "Photo 3"
+  ]
+}
+------------------------------------
+{
+  "firstName": "shashank",
+  "lastName": "srivastava",
+  "email": "shashank@dev.com",
+  "status": "ACTIVE",
+  "homeAddress": {
+    "street": "street no-2",
+    "zipcode": "110001",
+    "city": "Delhi"
+  },
+  "billingAddress": {
+    "street": "street no-2",
+    "zipcode": "110006",
+    "city": "Delhi"
+  },
+  "about": "Showing Demo of hibernate concepts",
+  "images": {
+  "photo1.jpg": "Photo 1",
+  "photo2.jpg": "Photo 2",
+  "photo3.jpg": "Photo 3",
+  "photo3.jpg": "Photo 3"
+ }
+}
+------------------------------------------------------
+        Joined Table Strategy
+
+{
+  "type": "HEAVY",
+  "moveSpeed": 300,
+  "durability": 500,
+  "attack": 90,
+  "shield": true
+}
+
+{
+  "type": "LIGHT",
+  "moveSpeed": 900,
+  "durability": 860,
+  "attack": 110,
+  "range": 1000
+}
+
+-------------------------------------------------------
+        Single Table Strategy
+{
+  "author": "Bikash",
+  "paintingTechnique": "WATERCOLOR",
+  "width": 10,
+  "height": 20
+}
+
+{
+  "author": "Shashank",
+  "material": "METAL",
+  "weight": 10
+}
+
+-------------------------------------------------------
+        Mapped SuperClass Strategy
+{
+"name": "S-450",
+"seats": 4,
+"firePower": 440
+},
+{
+"name": "400N",
+"seats": 2,
+"maxLoad": 34,
+"sleeperCab": true
+}
+--------------------------------------------------------
+        Table Per Class
+
+{
+  "firstName": "shashank",
+  "lastName": "srivastava",
+  "email": "shashank@instructor.com",
+  "salary": 1000
+}
+{
+  "firstName": "bikash",
+  "lastName": "gupta",
+  "email": "bikash@dev.com",
+  "course": "react"
+}
+
+-------------------------------------------------------
+        Composite Key Person Table
+{
+"personId": 1,
+"deptId": 2,
+"personName": {
+"firstName": "shashank",
+"lastName": "srivastava"
+},
+"email": "shashank@test.com",
+"phone": "9876543210"
+}
+--------------------------------------------------------
+        Composite Key Manager Table
+{
+"managerPKId": {
+"managerId": 1,
+"deptId": 2
+},
+"name": "bikash",
+"email": "bikash@test.com",
+"phone": "9876543210"
+}
+---------------------------------------------------------

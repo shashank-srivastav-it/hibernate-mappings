@@ -12,4 +12,5 @@ import org.springframework.stereotype.Repository;
 @Tag(name = "Manager Data Rest Controller", description = "CRUD operations for Managers")
 @RepositoryRestResource(path = "managers")
 public interface ManagerRepository extends JpaRepository<Manager, ManagerPKId> {
+
 }
