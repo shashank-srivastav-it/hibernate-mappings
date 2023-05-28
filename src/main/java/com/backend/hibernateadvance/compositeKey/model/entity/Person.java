@@ -4,16 +4,13 @@ import com.backend.hibernateadvance.attributeConverter.PersonCallbacks;
 import com.backend.hibernateadvance.attributeConverter.PersonNameConverter;
 import com.backend.hibernateadvance.compositeKey.model.PersonName;
 import com.backend.hibernateadvance.compositeKey.model.idClass.PersonPKId;
+import com.backend.hibernateadvance.config.SpringContextHelper;
+import com.backend.hibernateadvance.services.EncryptionService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Convert;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -31,4 +28,21 @@ public class Person {
     private PersonName personName;
     private String email;
     private String phone;
+
+    @PrePersist
+    @PreUpdate
+    public void beforeInsertOrUpdate() {
+        System.out.println("before update was called...");
+        this.setEmail(getEncryptionService().encrypt(this.getEmail()));
+    }
+
+    @PostLoad
+    public void postLoad() {
+        System.out.println("Post Load was called...");
+        this.setEmail(getEncryptionService().decrypt(this.getEmail()));
+    }
+
+    private EncryptionService getEncryptionService() {
+        return SpringContextHelper.getApplicationContext().getBean(EncryptionService.class);
+    }
 }

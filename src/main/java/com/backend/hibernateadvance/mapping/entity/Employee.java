@@ -1,24 +1,22 @@
 package com.backend.hibernateadvance.mapping.entity;
 
 import com.backend.hibernateadvance.mapping.enumeration.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SortComparator;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDateTime;
+import java.util.*;
 
 @Data
 @Entity
@@ -26,8 +24,10 @@ import javax.validation.constraints.Pattern;
 @Table(name = "employee")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
+    private UUID id;
 
     @NotBlank(message = "firstname cannot be empty")
     @Pattern(regexp = "[a-zA-Z]+", message = "firstname should contains only alphabetic characters")
@@ -60,6 +60,16 @@ public class Employee {
     @Column(columnDefinition = "TEXT")
     private String about;
 
+    @JsonIgnore
+    @CreationTimestamp
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime createTime;
+
+    @JsonIgnore
+    @UpdateTimestamp
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    private LocalDateTime updateTime;
+
 //    @ElementCollection
 //    @CollectionTable(name = "image", joinColumns = @JoinColumn(name = "employee_id"))
 //    @Column(name = "file_name")
@@ -74,7 +84,7 @@ public class Employee {
 //    @ElementCollection
 //    @CollectionTable(name = "image")
 //    @MapKeyColumn(name = "file_name")
-//    @Column(name = "image_name")
+//    @Column(name = "description")
 //    private Map<String, String> images = new HashMap<>();
 
 //    @ElementCollection
@@ -86,7 +96,7 @@ public class Employee {
 //    @ElementCollection
 //    @CollectionTable(name = "image")
 //    @MapKeyColumn(name = "file_name") //Maps Key
-//    @Column(name = "image_name") //Maps Value
+//    @Column(name = "description") //Maps Value
 //    @SortComparator(ReverseStringComparator.class)
 //    private SortedMap<String, String> images = new TreeMap<>();
 //
