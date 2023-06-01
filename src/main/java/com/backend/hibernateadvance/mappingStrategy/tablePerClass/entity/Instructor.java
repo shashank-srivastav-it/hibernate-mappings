@@ -10,6 +10,6 @@ import javax.persistence.Entity;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Instructor extends User {
+public class Instructor extends Person {
     private Double salary;
 }

@@ -10,6 +10,6 @@ import javax.persistence.Entity;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student extends User {
+public class Student extends Person {
     private String course;
 }

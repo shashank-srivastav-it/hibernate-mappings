@@ -49,6 +49,13 @@
 --------------------------------------------------------
         Table Per Class
 
+
+{
+  "firstName": "praveen",
+  "lastName": "tripathi",
+  "email": "praveen@user.com",
+  "salary": 1000
+}
 {
   "firstName": "shashank",
   "lastName": "srivastava",
